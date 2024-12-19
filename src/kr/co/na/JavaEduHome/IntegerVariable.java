@@ -45,7 +45,26 @@ public class IntegerVariable {
 		System.out.println(iNum5);
 		System.out.println(iNum6);
 		
-		 
+		/*
+		 * 	단항 연산자		항이 한 개인 연산자		++num
+		 * 	이항 연산자		항이 두 개인 연산자		num1+num2;
+		 * 	삼항 연산자		항이 세 개인 연산자		(5>3) ? 1 : 0;
+		 * 
+		 * 	대입 연산자		외쪽 변수 = 오른쪽 변수(또는 식)
+		 * 		int age = 24;
+		 * 		totalScore = mathScore + engScore;
+		 * 
+		 * 	부호 연산자
+		 * 		+		변수나 상수 값을 양수로 만듬
+		 * 		-		변수나 상수 값을 음수로 만듬
+		 */
+		int Num7  = 10;
+		System.out.println(+Num7);	//값이 10이 그대로 출력
+		System.out.println(-Num7);	//값에 -가 붙어서 출력되지만 음수로 바뀌는것은 아님
+		System.out.println(Num7);	//값이 그대로 출력됨
+		
+		Num7 = -Num7;				//Num7값을 음수로 변경
+		System.out.println(Num7);	//값 -10(음수)가 출력됨
 		
 	}
 
