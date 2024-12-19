@@ -45,7 +45,7 @@ public class IntegerVariable {
 		System.out.println(iNum5);
 		System.out.println(iNum6);
 		
-		
+		 
 		
 	}
 
