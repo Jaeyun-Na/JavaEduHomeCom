@@ -66,6 +66,7 @@ public class IntegerVariable {
 		Num7 = -Num7;				//Num7값을 음수로 변경
 		System.out.println(Num7);	//값 -10(음수)가 출력됨
 		
+	
 	}
 
 }
