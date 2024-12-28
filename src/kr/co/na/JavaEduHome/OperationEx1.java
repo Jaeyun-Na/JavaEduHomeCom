@@ -127,7 +127,197 @@ public class OperationEx1 {
 		 *	^=		두 항의 ^ 비트 연산 후 그 값을 왼쪽 항에 대입									num1 ^= 2;
 		 *																				num1 = num1 ^ 2; 와 같음
 		 */
+		System.out.println("==================================================================================");
+		/*
+		 * 		조건 연산자
+		 * 
+		 * 	조건식 ? 결과1 : 결과2		조건식이 참이면 결과1, 조건식이 거짓이면 결과2가 선택됨			int num = (5 > 3) ? 10 : 20
 		
-	}
+		 */
+		
+		int fatherAge = 45;
+		int motherAge = 43;
+		
+		char ch;
+		ch = (fatherAge > motherAge) ? 'T' : 'F';
+		
+		System.out.println(ch);
+		
+		//문제
+		int num =10;
+		boolean isEven;
+		isEven = (num % 2 == 0) ? true : false;
+		
+		System.out.println(isEven);
+		
+		System.out.println("==================================================================================");
+		
+		/*
+		 * 		비트 연산자
+		 * 비트 단위로 &,|,^,~ 연산이 이루어짐
+		 * 
+		 * 		$(and)연산자
+		 * 두개의 비트값이 모두 1인 경우에만 연산 결과 값이 1이됨
+		 * 
+		 * 	int num1 = 5;							num1 	: 00000101
+		 * 	int num2 = 10;						  & num2 	: 00001010
+		 *	int result = num1 & num2;				result	: 00000000	->	10진수 = 0
+		 * 
+		 * 
+		 * 		|(or) 연산자
+		 * 비트 값이 하나라도 1이면 연산 결과 값이 1이 됨
+		 * 	
+		 * 	int num1 = 5;							num1 	: 00000101
+		 * 	int num2 = 10;						  | num2 	: 00001010
+		 *	int result = num1 | num2;				result	: 00001111	->	10진수 = 15
+		 * 
+		 * 
+		 * 		^(X or)연산자
+		 * 	비트 값이 같은 값이면 0, 다른 값이면 1이됨
+		 * 
+		 * 	int num1 = 5;							num1 	: 00000101
+		 * 	int num2 = 10;						  ^ num2 	: 00001010
+		 *	int result = num1 ^ num2;				result	: 00001111	->	10진수 = 15 
+		 *
+		 *		~(반전)연산자
+		 *	비트 값을 0은 1로, 1은 0으로 바꾸는 연산자
+		 *
+		 *	int num = 10;							num		: 00001010
+		 *	int result = ~num;					  ~ num		: 11110101	->	10진수 = -11
+		 *
+		 *
+		 *
+		 *		비트 이동 연산자
+		 *	<<,>>,>>> 이렇게 3가지로 되어있음. 시프트(shift)연산자라고도 함
+		 *
+		 *
+		 *		<<연산자
+		 *	<<연산자는 비트를 왼쪽으로 이동시킴
+		 *
+		 *	int num = 5;							num		: 00000101
+		 *	num << 2;								num << 2: 00010100
+		 *
+		 *
+		 *		>>연산자
+		 *	>>연산자는 비트를 오른쪽으로 이동시킴
+		 *
+		 *	int num = 10;							num		: 00001010
+		 *	num >> 2;								num	>> 2: 00000010
+		 *
+		 *
+		 *		>>>연산자
+		 *	>>>연산자는 >>연산과 동일하게 비트를 오른쪽으로 이동함.
+		 *	차이가 있다면 >>>연산자는 왼쪽에 채워지는 비트 값이 부호 비트와 상관 없이 무조건 0이 됨
+		 *	-예제-
+		 */
+		int num4 = 0B00000101;
+		
+		System.out.println(num << 2);		//왼쪽으로 2비트 이동	00010100
+		System.out.println(num >> 2);		//오른쪽으로 2비트 이동	00000001
+		System.out.println(num >>> 2);		//오른쪽으로 2비트 이동	00000001
+		
+		System.out.println(num4);
+		
+		num4 = num4 << 2;
+		System.out.println(num4);
+		
+		/*
+		 * 		연산자 우선 순위
+		 * 	* 단항 연산자가 가장 높고 이항, 삼항 연산자 순서
+		 *  * 대입 연산자의 우선순위가 가장 낮음.
+		 *  * 산술, 관계, 논리, 대입 연산자 순서로 우선 순위를 가지며 ()의 우선 순의가 가장 높다.
+		 *  
+		 *  
+		 *  
+		 *  	우선순위		형		연산자				연산방향
+		 *  	  1		  일자식		()[].		  		-->
+		 *    	  2		  단항		! ++ -- + -	  		<--
+		 *    	  3		  산술		% /			  		-->
+		 *    	  4		  산술		+ -			  		-->
+		 *    	  5		  비트 이동	<< >>		  		-->
+		 *    	  6		  관계		< > <= >=	  		-->
+		 *    	  7		  관계		== !=		  		-->
+		 *    	  8		  비트 곱		&			  		-->
+		 *    	  9		  비트 차		^			  		-->
+		 *    	  10	  비트 합		|			  		-->
+		 *    	  11	  논리 곱		&&			  		-->
+		 *    	  12	  논리 합		||			  		-->
+		 *   	  13	  조건		? :		  			-->
+		 *     	  14	  대입		= += -= *= %= /=	<--
+		 *     
+		 *        
+		 *		연산자 우선순위가 높은 순으로 배치
+		 *		&&, ++, +=, ==   -->   ++ == && +=
+		 *
+		 */
+		System.out.println("==================================================================================");
+		int myAge1 = 23;
+		int teacherAge = 38;
+		
+		boolean value3 = (myAge1 > 25);
+		System.out.println(value3);
+		
+		System.out.println(myAge1 <= 25);
+		System.out.println(myAge1 == teacherAge);
+		
+		char ch1;
+		ch1 = (myAge1 > teacherAge) ? 'T' : 'F';
+		
+		System.out.println(ch1);
+		
+		System.out.println("==================================================================================");
+		
+		int num5;
+		num5 = -5 + 3 * 10 / 2;
+		System.out.println(num5);	//10
+		
+		System.out.println("==================================================================================");
+		
+		int num6 = 10;
+		
+		System.out.println(num6);	//10
+		System.out.println(num6++);	//11	--> 10 값을 반환 후 증강
+		System.out.println(num6);	//10	--> 11 위에서 증강된 값이 대입 되었으니 11
+		System.out.println(--num6);	//9		--> 10 11에서 먼저 차감 후 대입
+		
+		System.out.println("==================================================================================");
+		
+		int num7 = 10;
+		int num8 = 20;
+		boolean result;
+		
+		result = ((num7 >10) && (num8 > 10));
+		System.out.println(result);				//false
+		result = ((num7 > 10) || (num8 > 10));
+		System.out.println(result);				//true
+		System.out.println(!result);			//false
+		
+		System.out.println("==================================================================================");
+		
+		int num9 = 2;			//0000 0010
+		int num10 = 10;			//0000 1010
+		
+		System.out.println(num9 & num10);		//0000 0010
+		System.out.println(num9 | num10);		//0000 1010
+		System.out.println(num9 ^ num10);		//0000 1000
+		System.out.println(~num9);				//1111 1101
+		
+		System.out.println("==================================================================================");
+		
+		int num11 = 8;		//0000 1000
+		
+		System.out.println(num11 += 10);	//18
+		System.out.println(num11 -= 10);	//-1
+		System.out.println(num11 >>= 2);	//0000 0010
+		
+		System.out.println("==================================================================================");
+		
+		
+		int num12 = 10;
+		int num13 = 20;
+		
+		int result2 = (num12 >= 10) ? num13+10 : num13-10;
+		System.out.println(result2);		//30
+}
 
 }
