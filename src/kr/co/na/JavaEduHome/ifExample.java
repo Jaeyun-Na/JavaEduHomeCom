@@ -276,9 +276,110 @@ public class ifExample {
 				break;
 		}
 		
+		System.out.println("==============================================================================================================");
+		System.out.println("");
 		
+		//	반복문
 		
+		int loopNum = 1;
+		loopNum += 2;
+		loopNum += 3;
+		loopNum += 4;
+		loopNum += 5;
+		loopNum += 6;
+		loopNum += 7;
+		loopNum += 8;
+		loopNum += 9;
+		loopNum += 10;
 		
+		System.out.println("반복문 예시1: 1 부터 10까지의 합은 "+loopNum+"입니다.");
+
+		/*
+		 * 위는 효육적이지 않은 코드임.
+		 * 반복되는 일을 처리하는것이 반복문임
+		 */
+		
+		//		while문
+		
+		/*
+		 * 	while(조건식1){		<--
+		 * 	수행문1					조건식1이 참일 경우 수행문1 계속 실행
+		 * 	}					<--
+		 * 	수행문2				<-- 조건식1이 거짓일 경우 수행문2 실행
+		 */
+		  	int exNum = 1;
+		  	int exSum = 0;
+		  
+		  	while(exNum <= 10){
+		  	exSum = exSum + exNum;
+		 // exSum += exNum;
+		  	exNum ++;
+		  	}
+		  
+			System.out.println("반복문 예시2: 1 부터 10까지의 합은 "+exSum+"입니다.");
+
+		//		do-while문
+			
+		/*	while문은 조건을 먼저 검사하므로 조건이 맞지 않으면, 반복 수행이 일어나지 않음.
+		 * 	do-while문의 경우 {}안의 문장을 무.조.건 한번 수행 후, 조건식 검사가 이루어짐
+		 * 	
+		 * 	do{
+		 * 		수행문1;
+		 * 	}
+		 * 	while(조건식1);
+		 * 	수행문2;
+		 */
+			int exNum1 = 1;
+			int exSum1 = 0;
+			
+			do {
+				exSum1 += exNum1;
+				exNum1++;
+			}
+			while(exNum1 <= 10);
+		
+			System.out.println("반복문 예시3: 1 부터 10까지의 합은 "+exSum1+"입니다.");
+		
+			
+		//		for문
+		
+		/*	반복문 중 가장많이 사용하는 반복문.
+		 * 	while문, do-while문보다 구조가 조금 더 복잡함.(변수의 초기화식, 조건식,증감식)
+		 * 
+		 * 	[기본 구조]
+		 * 
+		 * 	for(초기화식; 조건식; 증감식){
+		 * 		수행문;
+		 * 	}
+		 */
+			int exNum2;
+			for(exNum2 = 1; exNum2 <= 5; exNum2++) {
+				System.out.println("for문입니다. :"+exNum2);
+			}
+		//	for문 예시
+			
+			int i;
+			int sum;
+			
+			for(i = 1, sum = 0; i <= 10; i++) {
+				sum += i;
+			}
+			System.out.println("for문 : 1부터 10까지의 합은 "+sum+"입니다.");
+			
+			
+		//예제: for문과 변수를 사용여, 안녕하세요1,안녕하세요2....안녕하세요10까지 차례로 출력 되도록 작성해보자
+			
+			int ex;
+			for(ex = 1; ex <= 10; ex++) {
+				System.out.println("for문 예제 : 안녕하세요"+ex);
+			}
+			
+			System.out.println("==============================================================================================================");
+			System.out.println("");
+			
+			
+			
+			
 	}
 
 }
